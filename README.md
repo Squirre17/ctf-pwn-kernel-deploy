@@ -17,8 +17,7 @@ also need gdbscript ...
 
 all operation scripts were placed in `$path/scripts`
 root file system be placed in `$path/rootfs` in which we exp will locate
-exp.c in `$path`
-also need `initrd.modified.cpio` to avoid injure original cpio file
+exp.c in `$path` also need `initrd.modified.cpio` to avoid injure original cpio file
 so we need cpio file be renamed to `initrd.cpio` (`rename.sh` will do that)
 
 # script
