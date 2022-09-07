@@ -26,6 +26,7 @@ unzip:
 pack:
 	@echo "${NOTIFY} Pack..."
 	@${spath}/cpio.sh zip
+	@echo "${DONE} Pack done"
 
 gdb:compile pack
 	@echo "${NOTIFY} open gdb port on 1234"
