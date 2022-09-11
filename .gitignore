@@ -1,0 +1,5 @@
+bzImage
+core.cpio
+*.cpio
+vmlinux
+etc/

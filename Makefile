@@ -1,4 +1,4 @@
-.PHONY: gdb run compile pack unzip init extract
+.PHONY: gdb run compile pack unzip init extract mvetc clean
 RED="\\033[31m"
 BLUE="\\033[34m"
 GREEN="\\033[32m"
@@ -8,11 +8,15 @@ ERROR =[${RED}!${DFT}]
 DONE  =[${GREEN}+${DFT}]
 spath =./scripts
 init:
+	@echo "${NOTIFY} make sure you have bzImage and name.cpio"
+	@sleep 1
 	@echo "${NOTIFY} (only need once)Initializing..."
 	@chmod +x -R ${spath}
 	@${spath}/rename.sh
 	@chmod +x ./initrd.cpio
 	@${spath}/cpio.sh unzip
+	@${spath}/mvetc.sh
+	@${spath}/extract.sh
 
 compile:
 	@echo "${NOTIFY} Compiling..."
@@ -38,6 +42,14 @@ run:compile pack
 	@${spath}/qemu_run.sh
 
 extract:
-	@echo "Function testing ,NOT AVAIABLE ,ABORT"
-	@exit 1
-	@/usr/src/linux-headers-$(uname -r)/scripts/extract-vmlinux bzImage > vmlinux
+	@echo "${NOTIFY} Extract..."
+	@${spath}/extract.sh
+
+# aim to speed up qemu boot 
+mvetc:
+	@echo "${NOTIFY} Move etc/ ..." 
+	@${spath}/mvetc.sh
+
+clean:
+	@echo "${NOTIFY} Clean..." 
+	@${spath}/clean.sh
