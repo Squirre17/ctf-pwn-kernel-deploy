@@ -16,7 +16,6 @@ init:
 	@${spath}/rename.sh
 	@chmod +x ./initrd.cpio
 	@${spath}/cpio.sh unzip
-	@${spath}/mvetc.sh
 	@${spath}/extract.sh
 
 compile:
@@ -46,7 +45,7 @@ extract:
 	@echo "${NOTIFY} Extract..."
 	@${spath}/extract.sh
 
-# aim to speed up qemu boot 
+# aim to speed up qemu boot (optional)
 mvetc:
 	@echo "${NOTIFY} Move etc/ ..." 
 	@${spath}/mvetc.sh
