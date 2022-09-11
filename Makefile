@@ -8,6 +8,7 @@ ERROR =[${RED}!${DFT}]
 DONE  =[${GREEN}+${DFT}]
 spath =./scripts
 init:
+	@mkdir -p rootfs
 	@echo "${NOTIFY} make sure you have bzImage and name.cpio"
 	@sleep 1
 	@echo "${NOTIFY} (only need once)Initializing..."
