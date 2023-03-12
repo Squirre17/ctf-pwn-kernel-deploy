@@ -20,6 +20,8 @@ init:
 
 compile:
 	@echo "${NOTIFY} Compiling..."
+	@gcc -g -shared -fPIC symbols.c -o symbols.so
+	@objcopy --only-keep-debug symbols.so symbols.sym
 	@gcc -g -o ./rootfs/exp exp.c --static -lpthread
 	@echo "${DONE} Compile done"
 

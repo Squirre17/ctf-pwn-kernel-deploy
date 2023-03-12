@@ -1,0 +1,7 @@
+gef-remote --qemu-user --qemu-binary ./vmlinux localhost 1234
+source deref.py
+add-symbol-file symbols.sym
+set $B=0xffffffff81000000
+set $C=0xffffffffc0000000
+add-symbol-file chall.ko 0xffffffffc0000000
+b *($C+0x00060)
