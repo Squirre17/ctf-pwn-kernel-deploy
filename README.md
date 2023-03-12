@@ -32,4 +32,11 @@ need `initrd.cpio` file
 ➜  Kerexp ./scripts/cpio.sh zip  
 ```
 
+# usage
+move necessary files to here(driver.so, initrd.cpio, etc)
+```shell
+make init
+make run
+```
+
 
