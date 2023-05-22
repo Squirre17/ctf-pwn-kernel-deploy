@@ -1,4 +1,4 @@
-**now replaced by [autokd](https://github.com/Squirre17/Autokd)**
+**[deprecated] now replaced by [autokd](https://github.com/Squirre17/Autokd)**
 
 modify exp.c, pack cpio, boot qemu then gdb attach and so on is fussy and error prone
 
